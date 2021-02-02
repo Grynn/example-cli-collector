@@ -3,8 +3,48 @@ const jsdom = require("jsdom"); //cheerio
 const { JSDOM } = jsdom;
 const { Parser } = require("json2csv");
 const fs = require("fs");
+const { mainModule } = require("process");
 
 const outFile = "./movies.csv";
+
+impprt * as db from "./db.js";
+import * as tp from "./services/truePushApi";
+
+//db.initDb();
+
+async function main() {
+    await initDb();
+    
+    //get campaigns
+    //for each campaign get stats
+    //write to database (assume the tables are already created)
+
+    //let campaigns = tp.getCallCampaign();
+    //for (let c of campaigns) {
+        //c.id 
+        
+        //if c.id !exists in the database,
+            //add campaigns to database with startTime = now
+
+        //if !c.completed
+            //continue;
+        
+        //campaign is completed & we know the startTime
+        //let stats = getStats(c.id);
+        //writeCampaign( c, stats );        
+    }
+
+    //columns: tbl_campaigns
+    //startDate, title, sent, delivered, views, unsubs
+
+    
+    //close connection
+}
+
+async function initDb() {
+    db = await ( new SQLite("filename.sqlite") );
+}
+
 
 //Reads top 100 movies from IMDB and writes to movies.csv
 async function collectTopMovies(numberOfMovies) {
