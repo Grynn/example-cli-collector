@@ -6,7 +6,8 @@
     />
   </a>
  
-Nodejs Daemon which will Scrap the IMDB Movie Data and Store it in the form of CSV file.
+Node CLI to fetch movie data from IMDB
+
 ### Requirements
 
 1. Node.js installed
